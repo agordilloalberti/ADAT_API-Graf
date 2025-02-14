@@ -98,9 +98,12 @@ LÓGICA DE NEGOCIO
 EXCEPCIONES
 -----------------------------------------
 
-**NotFoundException**
-  En caso de no encontrar una tarea se lanzará esta excepción
+**NotFoundException -- 404**
+  En caso de no encontrar una tarea se lanzará esta excepción.
 
-**UnauthorizedException**
+**UnauthorizedException -- 401**
   En caso de intentar hacer login con un usuario inexistente, introducir una contraseña incorrecta o intentar acceder a 
-  recursos reservados se lanzará esta excepción
+  recursos reservados se lanzará esta excepción.
+
+**InvalidInputException -- 400**
+  En caso de enviar datos no validos se lanzará esta excepción
