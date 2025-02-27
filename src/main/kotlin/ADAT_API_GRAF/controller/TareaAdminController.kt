@@ -39,7 +39,7 @@ class TareaAdminController {
         return ResponseEntity(tareas, HttpStatus.OK)
     }
 
-    @PostMapping("/")
+    @PostMapping("/add")
     fun adminAddTarea(
         authentication: Authentication,
         @RequestBody tareaAdminAddDTO : TareaAdminAddDTO
