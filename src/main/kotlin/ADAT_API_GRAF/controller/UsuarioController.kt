@@ -57,9 +57,4 @@ class UsuarioController {
 
         return ResponseEntity(mapOf("token" to token), HttpStatus.CREATED)
     }
-
-    @GetMapping("/HOLA")
-    fun hola() : String{
-        return "HOLA"
-    }
 }

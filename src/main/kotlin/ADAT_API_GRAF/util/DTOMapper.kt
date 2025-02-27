@@ -1,6 +1,8 @@
 package ADAT_API_GRAF.util
 
+import ADAT_API_GRAF.dto.TareaDTO
 import ADAT_API_GRAF.dto.UsuarioRegisterDTO
+import ADAT_API_GRAF.model.Tarea
 import ADAT_API_GRAF.model.Usuario
 
 object DTOMapper {
@@ -23,6 +25,20 @@ object DTOMapper {
             usuarioDTO.direccion,
             usuarioDTO.rol!!,
         )
+    }
+
+    fun tareaDTOToEntity(tareaDTO: TareaDTO) : Tarea{
+        return Tarea(
+            null,
+            tareaDTO.name,
+            tareaDTO.descripcion,
+            tareaDTO.completada,
+            tareaDTO.usuario
+                )
+    }
+
+    fun tareaEntityTODTO(tarea: Tarea) : TareaDTO{
+        return TareaDTO(tarea.name,tarea.descripcion,tarea.completada,tarea.usuario)
     }
 
 }
