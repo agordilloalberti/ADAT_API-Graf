@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/Tareas/admin")
+@RequestMapping("/TareasAdmin")
 class TareaAdminController {
 
     @Autowired
@@ -66,7 +66,7 @@ class TareaAdminController {
         return ResponseEntity(tarea, HttpStatus.OK)
     }
 
-    @PutMapping("/{tareaName}")
+    @PutMapping("/complete/{tareaName}")
     fun completeTareaAdmin(
         authentication: Authentication,
         @PathVariable tareaName : String

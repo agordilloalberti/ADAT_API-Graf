@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import kotlin.jvm.optionals.getOrNull
 
 @Service
 class UsuarioService : UserDetailsService {
@@ -41,6 +42,12 @@ class UsuarioService : UserDetailsService {
     }
 
     fun insertUser(usuarioInsertadoDTO: UsuarioRegisterDTO): UsuarioDTO? {
+        val userDTB = usuarioRepository.findByUsername(usuarioInsertadoDTO.username).getOrNull()
+
+        if (userDTB!=null){
+            throw InvalidInputException("El usuario ${usuarioInsertadoDTO.username} ya existe")
+        }
+
         var user : UsuarioDTO? = null
 
         val datosProvincias = apiService.obtenerDatosDesdeApi()
@@ -53,15 +60,16 @@ class UsuarioService : UserDetailsService {
             usuarioInsertadoDTO.password.isBlank()||
             usuarioInsertadoDTO.passwordRepeat.isBlank()||
             usuarioInsertadoDTO.direccion.isEmpty()){
-            throw InvalidInputException("")
+            throw InvalidInputException("Ningun campo puede estar vacio")
         }
 
         user = UsuarioDTO(
             usuarioInsertadoDTO.username,
+            passwordEncoder.encode(usuarioInsertadoDTO.password),
             usuarioInsertadoDTO.name,
             usuarioInsertadoDTO.surname,
-            passwordEncoder.encode(usuarioInsertadoDTO.password),
-            usuarioInsertadoDTO.direccion)
+            usuarioInsertadoDTO.direccion,
+            usuarioInsertadoDTO.rol)
 
         if (datosProvincias?.data != null){
             val dato = datosProvincias.data.stream().filter {
@@ -76,13 +84,13 @@ class UsuarioService : UserDetailsService {
 
         if (datosMunucipios?.data != null){
             datosMunucipios.data.stream().filter {
-                it.PRO == user.direccion.municipio
+                it.DMUN50 == user.direccion.municipio
             }.findFirst().orElseThrow {
                 NotFoundException("Municipio ${user.direccion.municipio.uppercase()} no valido")
             }
         }
 
-        usuarioRepository.insert(DTOMapper.userDTOToEntity(usuarioInsertadoDTO))
+        usuarioRepository.insert(DTOMapper.userDTOToEntity(user))
 
         return user
     }

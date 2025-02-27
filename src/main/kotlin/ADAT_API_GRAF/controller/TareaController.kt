@@ -48,7 +48,7 @@ class TareaController {
         return ResponseEntity(tarea, HttpStatus.OK)
     }
 
-    @PutMapping("/{name}")
+    @PutMapping("/complete/{name}")
     fun completeTarea(
         authentication: Authentication,
         @PathVariable name : String
