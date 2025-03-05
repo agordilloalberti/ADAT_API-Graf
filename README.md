@@ -111,15 +111,10 @@ recursos reservados se lanzará esta excepción.
 En caso de enviar datos no validos se lanzará esta excepción
 
 -----------------------------------------
-**PRUEBAS**
+PRUEBAS USUARIOS
 -----------------------------------------
 Si se desean revisar las capturas, las capturas se encuentran en la carpeta capturas.
-Los numeros pares corresponden a operaciones correctas y los pares a errores.
-
-
-
-
-****Usuarios****
+Los numeros pares corresponden a operaciones correctas y los pares a errores, esto aplica también al siguiente apartado de pruebas.
 
 
 Se crean dos usuarios, uno administrador y uno corriente
@@ -149,7 +144,10 @@ Si las credenciales son incorrectas se devuelve un error 400
 
 ![Captura 8.PNG](Capturas/Captura%208.PNG)
 
+-----------------------------------------
+PRUEBAS TAREAS
+-----------------------------------------
 
 
-****Tareas****
+**USUARIO CORRIENTE**
 
