@@ -98,6 +98,20 @@ class TareaAdminController {
         return  ResponseEntity(tarea, HttpStatus.OK)
     }
 
+    @PutMapping("/uncomplete/{tareaName}")
+    fun uncompleteTareaAdmin(
+        authentication: Authentication,
+        @PathVariable tareaName : String
+    ) : ResponseEntity<TareaDTO>{
+        if (tareaName.isBlank()){
+            throw InvalidInputException("El nombre de la tarea es obligatorio")
+        }
+
+        val tarea = tareaService.completeTareaAdmin(tareaName,authentication)
+
+        return  ResponseEntity(tarea, HttpStatus.OK)
+    }
+
     @DeleteMapping("/{name}")
     fun deleteTareaAdmin(
         authentication: Authentication,

@@ -108,6 +108,27 @@ class TareaService {
         return TareaDTO(tareaUpdate.name,tareaUpdate.descripcion,tareaUpdate.completada,tareaUpdate.usuario.username)
     }
 
+    fun uncompleteTarea(name: String, authentication: Authentication) : TareaDTO{
+        val user = usuarioRepository.findByUsername(authentication.name).orElseThrow {
+            NotFoundException("El usuario ${authentication.name} no existe")
+        }
+
+        val tareaFind = tareaRepository.findByName(name).orElseThrow {
+            NotFoundException("La tarea $name no existe")
+        }
+
+        if (tareaFind.usuario.username!=user.username){
+            throw UnauthorizedException("El usuario ${user.username} no puede editar las tareas de otro usuario")
+        }
+
+        val tareaUpdate = Tarea(tareaFind._id,tareaFind.name,tareaFind.descripcion,false,tareaFind.usuario)
+
+        tareaRepository.delete(tareaFind)
+        tareaRepository.insert(tareaUpdate)
+
+        return TareaDTO(tareaUpdate.name,tareaUpdate.descripcion,tareaUpdate.completada,tareaUpdate.usuario.username)
+    }
+
     fun deleteTarea(name: String, authentication: Authentication): TareaDTO{
         val user = usuarioRepository.findByUsername(authentication.name).orElseThrow {
             NotFoundException("El usuario ${authentication.name} no existe")
@@ -204,6 +225,23 @@ class TareaService {
         }
 
         val tareaUpdate = Tarea(tareaFind._id,tareaFind.name,tareaFind.descripcion,true,tareaFind.usuario)
+
+        tareaRepository.delete(tareaFind)
+        tareaRepository.insert(tareaUpdate)
+
+        return TareaDTO(tareaUpdate.name,tareaUpdate.descripcion,tareaUpdate.completada,tareaUpdate.usuario.username)
+    }
+
+    fun uncompleteTareaAdmin(name: String, authentication: Authentication): TareaDTO{
+        val admin = usuarioRepository.findByUsername(authentication.name).orElseThrow {
+            NotFoundException("El usuario ${authentication.name} no existe")
+        }
+
+        val tareaFind = tareaRepository.findByName(name).orElseThrow {
+            NotFoundException("La tarea $name no existe")
+        }
+
+        val tareaUpdate = Tarea(tareaFind._id,tareaFind.name,tareaFind.descripcion,false,tareaFind.usuario)
 
         tareaRepository.delete(tareaFind)
         tareaRepository.insert(tareaUpdate)

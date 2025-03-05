@@ -154,14 +154,24 @@ Se crea una tarea, se debe introducir un nombre y una descripción de forma opci
 
 ![Captura 9.PNG](Capturas/Captura%209.PNG)
 
-Si el nombre coincide con otra tarea ya creada salta un error 400
+Si el nombre coincide con otra tarea ya creada salta un error 400.
 
 ![Captura 10.PNG](Capturas/Captura%2010.PNG)
 
 
 Se acceden a todas las tareas del usuario, aquí no es posible acceder a tareas de otros usuarios por dos razones:
     1-Un sistema de roles que no permitiría acceder a este usuario a las tareas de otros, cosa que se verá después
-    2-La necesidad de acceder a traves de otra url distinta, la cual se verá posteriormente, a la vez que el punto anterior.
+    2-La necesidad de acceder a traves de otra url distinta, la cual se verá posteriormente, a la vez que el punto anterior
+        y los siguientes que requieran de tareas de otros usuarios.
 
 ![Captura 11.PNG](Capturas/Captura%2011.PNG)
 
+
+Se actualiza la tarea creada anteriormente.
+
+![Captura 12.PNG](Capturas/Captura%2012.PNG)
+
+
+Se completa la tarea anterior
+
+![Captura 13.PNG](Capturas/Captura%2013.PNG)
