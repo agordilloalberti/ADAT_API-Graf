@@ -218,7 +218,9 @@ El usuario administrador puede acceder a las tareas propias o de un usuario en c
 
 Si se introduce un token de usuario corriente y se intenta acceder a las tareas de otro usuario de cualquier manera 
 se devuelve un error 403 (Forbidden).
+
 ![Captura 22.PNG](Capturas/Captura%2022.PNG)
+
 ![Captura 23.PNG](Capturas/Captura%2023.PNG)
 
 ![Captura 24.PNG](Capturas/Captura%2024.PNG)
@@ -233,8 +235,15 @@ se devuelve un error 403 (Forbidden).
 
 
 El usuario administrador puede cambiar todos los aspectos de una tarea, siempre y cuando cumplan las dos reglas anteriores,
-que el nombre no este repetido y que el usuario exista, en caso de dejar el campo usuario se asigna el usuario a  el administrador
+que el nombre no esté repetido y que el usuario exista, en caso de dejar el campo usuario se asigna el usuario al administrador.
 
 ![Captura 22.PNG](Capturas/Captura%2022.PNG)
 
 ![Captura 29.PNG](Capturas/Captura%2029.PNG)
+
+![Captura 30.PNG](Capturas/Captura%2030.PNG)
+
+![Captura 31.PNG](Capturas/Captura%2031.PNG)
+
+![Captura 32.PNG](Capturas/Captura%2032.PNG)
+
