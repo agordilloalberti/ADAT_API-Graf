@@ -114,7 +114,6 @@ En caso de enviar datos no validos se lanzará esta excepción
 PRUEBAS USUARIOS
 -----------------------------------------
 Si se desean revisar las capturas, las capturas se encuentran en la carpeta capturas.
-Los numeros pares corresponden a operaciones correctas y los pares a errores, esto aplica también al siguiente apartado de pruebas.
 
 
 Se crean dos usuarios, uno administrador y uno corriente
@@ -150,4 +149,19 @@ PRUEBAS TAREAS
 
 
 **USUARIO CORRIENTE**
+
+Se crea una tarea, se debe introducir un nombre y una descripción de forma opcional.
+
+![Captura 9.PNG](Capturas/Captura%209.PNG)
+
+Si el nombre coincide con otra tarea ya creada salta un error 400
+
+![Captura 10.PNG](Capturas/Captura%2010.PNG)
+
+
+Se acceden a todas las tareas del usuario, aquí no es posible acceder a tareas de otros usuarios por dos razones:
+    1-Un sistema de roles que no permitiría acceder a este usuario a las tareas de otros, cosa que se verá después
+    2-La necesidad de acceder a traves de otra url distinta, la cual se verá posteriormente, a la vez que el punto anterior.
+
+![Captura 11.PNG](Capturas/Captura%2011.PNG)
 
