@@ -117,7 +117,8 @@ Si se desean revisar las capturas, las capturas se encuentran en la carpeta capt
 Los numeros pares corresponden a operaciones correctas y los pares a errores.
 
 
-**Registrar**
+****Usuarios****
+
 
 Se crean dos usuarios, uno administrador y uno corriente
 
