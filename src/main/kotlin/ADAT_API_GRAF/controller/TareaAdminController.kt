@@ -107,7 +107,7 @@ class TareaAdminController {
             throw InvalidInputException("El nombre de la tarea es obligatorio")
         }
 
-        val tarea = tareaService.completeTareaAdmin(tareaName,authentication)
+        val tarea = tareaService.uncompleteTareaAdmin(tareaName,authentication)
 
         return  ResponseEntity(tarea, HttpStatus.OK)
     }
