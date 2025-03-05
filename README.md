@@ -201,3 +201,21 @@ Sigue las mismas reglas que las tareas normales con la adición de que no puede 
 ![Captura 16.PNG](Capturas/Captura%2016.PNG)
 
 ![Captura 17.PNG](Capturas/Captura%2017.PNG)
+
+![Captura 18.PNG](Capturas/Captura%2018.PNG)
+
+![Captura BD 1 InsertAdmin.PNG](Capturas/Captura%20BD%201%20InsertAdmin.PNG)
+
+
+El usuario administrador puede acceder a las tareas propias o de un usuario en concreto.
+
+![Captura 19.PNG](Capturas/Captura%2019.PNG)
+
+![Captura 20.PNG](Capturas/Captura%2020.PNG)
+
+![Captura 21.PNG](Capturas/Captura%2021.PNG)
+
+
+Si se introduce un token de usuario corriente y se intenta acceder a las tareas de otro usuario se devuelve un error 403 (Forbidden)
+
+![Captura 23.PNG](Capturas/Captura%2023.PNG)

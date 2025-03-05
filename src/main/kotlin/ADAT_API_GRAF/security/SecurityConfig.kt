@@ -43,7 +43,7 @@ class SecurityConfig {
                 auth
                     .requestMatchers("/Usuarios/**").permitAll()
                     .requestMatchers("/Tareas/**").authenticated()
-                    .requestMatchers("/Tareas/admin/**").hasRole("ADMIN")
+                    .requestMatchers("/TareasAdmin/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
             }
             .oauth2ResourceServer { oauth2 ->
