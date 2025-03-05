@@ -14,7 +14,6 @@ import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.AuthenticationException
-import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -28,6 +27,7 @@ class UsuarioController {
     @Autowired
     private lateinit var usuarioService: UsuarioService
 
+    //Post
     @PostMapping("/register")
     fun insert(
         httpRequest: HttpServletRequest,
