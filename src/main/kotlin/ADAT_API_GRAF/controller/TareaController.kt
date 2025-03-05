@@ -34,8 +34,6 @@ class TareaController {
     @GetMapping("/get")
     fun getTareas(authentication : Authentication) : ResponseEntity<List<TareaDTO>> {
 
-        print(authentication)
-
         val tareas = tareaService.getTareas(authentication)
 
         return ResponseEntity(tareas, HttpStatus.OK)
