@@ -154,6 +154,8 @@ Se crea una tarea, se debe introducir un nombre y una descripción de forma opci
 
 ![Captura 9.PNG](Capturas/Captura%209.PNG)
 
+![Captura BD 1 Insert.PNG](Capturas/Captura%20BD%201%20Insert.PNG)
+
 Si el nombre coincide con otra tarea ya creada salta un error 400.
 
 ![Captura 10.PNG](Capturas/Captura%2010.PNG)
@@ -171,7 +173,21 @@ Se actualiza la tarea creada anteriormente.
 
 ![Captura 12.PNG](Capturas/Captura%2012.PNG)
 
+![Captura BD 2 Update.PNG](Capturas/Captura%20BD%202%20Update.PNG)
 
-Se completa la tarea anterior
+Se completa la tarea anterior y seguidamente se vuelve a marcar como no completada
 
 ![Captura 13.PNG](Capturas/Captura%2013.PNG)
+
+![Captura BD 3 Completar.PNG](Capturas/Captura%20BD%203%20Completar.PNG)
+
+![Captura 14.PNG](Capturas/Captura%2014.PNG)
+
+![Captura BD 4 Descompletar.PNG](Capturas/Captura%20BD%204%20Descompletar.PNG)
+
+
+Por último se borra la tarea creada.
+
+![Captura 15.PNG](Capturas/Captura%2015.PNG)
+
+![Captura BD 5 Delete.PNG](Capturas/Captura%20BD%205%20Delete.PNG)
