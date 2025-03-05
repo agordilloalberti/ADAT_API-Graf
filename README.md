@@ -247,3 +247,6 @@ que el nombre no esté repetido y que el usuario exista, en caso de dejar el cam
 
 ![Captura 32.PNG](Capturas/Captura%2032.PNG)
 
+![Captura 33.PNG](Capturas/Captura%2033.PNG)
+
+![Captura 34.PNG](Capturas/Captura%2034.PNG)
