@@ -109,3 +109,11 @@ recursos reservados se lanzará esta excepción.
 
 **InvalidInputException -- 400**
 En caso de enviar datos no validos se lanzará esta excepción
+
+-----------------------------------------
+PRUEBAS
+-----------------------------------------
+
+**Registrar**
+
+![](G:\Instituto\24-25\ADA\Mongo\TrabajoFinal\Capturas\Usuario\Captura 1.PNG)
