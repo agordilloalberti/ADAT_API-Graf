@@ -24,6 +24,16 @@ class TareaAdminController {
     @Autowired
     private lateinit var tareaService: TareaService
 
+    @GetMapping("/get")
+    fun getTareasAdminSelf(
+        authentication: Authentication,
+    ) : ResponseEntity<List<TareaDTO>> {
+
+        val tareas = tareaService.getTareas(authentication)
+
+        return ResponseEntity(tareas, HttpStatus.OK)
+    }
+
     @GetMapping("/{username}")
     fun getTareasAdmin(
         authentication: Authentication,
@@ -45,6 +55,10 @@ class TareaAdminController {
         @RequestBody tareaAdminAddDTO : TareaAdminAddDTO
     ) : ResponseEntity<TareaDTO>?{
 
+        if (tareaAdminAddDTO.usuario.isBlank()){
+            tareaAdminAddDTO.usuario=authentication.name
+        }
+
         val tarea = tareaService.insetAdminTarea(tareaAdminAddDTO,authentication)
 
         return ResponseEntity(tarea, HttpStatus.CREATED)
@@ -59,6 +73,10 @@ class TareaAdminController {
 
         if (tareaName.isBlank()){
             throw InvalidInputException("El nombre de la tarea es obligatorio")
+        }
+
+        if (tareaAdminAddDTO.usuario.isBlank()){
+            tareaAdminAddDTO.usuario=authentication.name
         }
 
         val tarea = tareaService.updateTareaAdmin(tareaName,tareaAdminAddDTO,authentication)
