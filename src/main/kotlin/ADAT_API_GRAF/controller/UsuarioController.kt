@@ -14,6 +14,7 @@ import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.AuthenticationException
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -46,9 +47,14 @@ class UsuarioController {
     @PostMapping("/login")
     fun login(@RequestBody usuario: LoginUsuarioDTO) : ResponseEntity<Any>? {
 
-        val authentication: Authentication
+        var authentication: Authentication
         try {
-            authentication = authenticationManager.authenticate(UsernamePasswordAuthenticationToken(usuario.username, usuario.password))
+            authentication = authenticationManager.authenticate(
+                UsernamePasswordAuthenticationToken(
+                    usuario.username,
+                    usuario.password
+                )
+            )
         } catch (e: AuthenticationException) {
             throw UnauthorizedException("Credenciales incorrectas")
         }

@@ -13,6 +13,7 @@ import ADAT_API_GRAF.util.DTOMapper
 import org.springframework.beans.factory.annotation.*
 import org.springframework.stereotype.*
 import org.springframework.security.core.Authentication
+import org.springframework.security.core.userdetails.UserDetails
 import kotlin.jvm.optionals.getOrNull
 
 @Service
@@ -44,6 +45,20 @@ class TareaService {
     }
 
     fun insertTarea(tarea: TareaAddDTO, authentication: Authentication) : TareaDTO{
+
+        println("Authentication: $authentication")
+        println("Principal: ${authentication.principal}")
+        println("Authorities: ${authentication.authorities}")
+
+        val username = (authentication.principal as? UserDetails)?.username ?: authentication.name
+        println("Username obtenido: $username")
+
+
+        if (username == null){
+            throw Exception("ME CAGO EN EL AUTHENTICATION DE MIERDA.  Sigue siendo nulo")
+        }
+
+
         val user = usuarioRepository.findByUsername(authentication.name).orElseThrow {
             NotFoundException("El usuario ${authentication.name} no existe")
         }
