@@ -107,7 +107,7 @@ class TareaAdminController {
         if (name.isBlank()){
             throw InvalidInputException("El nombre de la tarea es obligatorio")
         }
-
+//
         val tarea = tareaService.deleteTarea(name, authentication)
 
         return  ResponseEntity(tarea, HttpStatus.OK)
