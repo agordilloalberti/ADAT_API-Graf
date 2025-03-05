@@ -176,7 +176,7 @@ class TareaService {
         }
 
         val user = usuarioRepository.findByUsername(tarea.usuario).orElseThrow {
-            NotFoundException("El usuario ${authentication.name} no existe")
+            NotFoundException("El usuario ${tarea.usuario} no existe")
         }
 
         val tarea2 = tareaRepository.findByName(tarea.name).getOrNull()

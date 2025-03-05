@@ -191,3 +191,13 @@ Por último se borra la tarea creada.
 ![Captura 15.PNG](Capturas/Captura%2015.PNG)
 
 ![Captura BD 5 Delete.PNG](Capturas/Captura%20BD%205%20Delete.PNG)
+
+
+**USUARIO ADMIN**
+
+El usuario administrador puede crear tareas para otros usuarios y para si mismo, si se deja el campo "usuario" vacío, la tarea se asigna al administrador.
+Sigue las mismas reglas que las tareas normales con la adición de que no puede asignarle tareas a usuarios que no existen
+
+![Captura 16.PNG](Capturas/Captura%2016.PNG)
+
+![Captura 17.PNG](Capturas/Captura%2017.PNG)
