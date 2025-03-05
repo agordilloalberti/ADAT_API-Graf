@@ -116,4 +116,4 @@ PRUEBAS
 
 **Registrar**
 
-<img src="G:\Instituto\24-25\ADA\Mongo\TrabajoFinal\Capturas\Usuario\Captura 1.PNG" alt=""/>
+![Captura 1.PNG](Capturas/Captura%201.PNG)
