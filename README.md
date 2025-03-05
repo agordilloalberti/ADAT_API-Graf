@@ -113,7 +113,35 @@ En caso de enviar datos no validos se lanzará esta excepción
 -----------------------------------------
 PRUEBAS
 -----------------------------------------
+Si se desean revisar las capturas, las capturas se encuentran en la carpeta capturas.
+Los numeros pares corresponden a operaciones correctas y los pares a errores.
+
 
 **Registrar**
 
+Se crean dos usuarios, uno administrador y uno corriente
+
 ![Captura 1.PNG](Capturas/Captura%201.PNG)
+
+![Captura 3.PNG](Capturas/Captura%203.PNG)
+
+Si se intenta crear otro usuario con el mismo nombre da error 400
+
+![Captura 2.PNG](Capturas/Captura%202.PNG)
+
+![Captura 4.PNG](Capturas/Captura%204.PNG)
+
+
+**Login**
+
+Se accede a cada usuario con su nombre de usuario y contraseña y se obtiene un token
+
+![Captura 5.PNG](Capturas/Captura%205.PNG)
+
+![Captura 7.PNG](Capturas/Captura%207.PNG)
+
+Si las credenciales son incorrectas se devuelve un error 400
+
+![Captura 6.PNG](Capturas/Captura%206.PNG)
+
+![Captura 8.PNG](Capturas/Captura%208.PNG)
