@@ -138,8 +138,11 @@ class TareaService {
             NotFoundException("La tarea $name no existe")
         }
 
-        if (tareaFind.usuario.username!=user.username){
-            throw UnauthorizedException("El usuario ${user.username} no puede editar las tareas de otro usuario")
+        if (user.roles!="USER_ADMIN") {
+
+            if (tareaFind.usuario.username != user.username) {
+                throw UnauthorizedException("El usuario ${user.username} no puede editar las tareas de otro usuario")
+            }
         }
 
         tareaRepository.delete(tareaFind)
