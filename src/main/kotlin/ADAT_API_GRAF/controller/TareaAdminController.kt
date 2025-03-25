@@ -34,6 +34,16 @@ class TareaAdminController {
         return ResponseEntity(tareas, HttpStatus.OK)
     }
 
+    @GetMapping("/all")
+    fun getAllTareas(
+        authentication: Authentication
+    ) : ResponseEntity<List<TareaDTO>>{
+
+        val tareas = tareaService.getAllTareas(authentication)
+
+        return ResponseEntity(tareas, HttpStatus.OK)
+    }
+
     @GetMapping("/{username}")
     fun getTareasAdmin(
         authentication: Authentication,

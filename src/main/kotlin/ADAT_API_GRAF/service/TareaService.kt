@@ -173,6 +173,21 @@ class TareaService {
         return tareasResult.toList()
     }
 
+    fun getAllTareas(authentication: Authentication): List<TareaDTO> {
+        val admin = usuarioRepository.findByUsername(authentication.name).orElseThrow {
+            NotFoundException("El usuario ${authentication.name} no existe")
+        }
+
+        val tareas = tareaRepository.findAll()
+        val tareasResult = mutableListOf<TareaDTO>()
+
+        for (tarea in tareas) {
+            tareasResult.add(DTOMapper.tareaEntityTODTO(tarea))
+        }
+
+        return tareasResult.toList()
+    }
+
     fun insetAdminTarea(tarea: TareaAdminAddDTO, authentication: Authentication) : TareaDTO?{
         val admin = usuarioRepository.findByUsername(authentication.name).orElseThrow {
             NotFoundException("El usuario ${authentication.name} no existe")
