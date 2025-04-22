@@ -34,7 +34,7 @@ class TareaAdminController {
         return ResponseEntity(tareas, HttpStatus.OK)
     }
 
-    @GetMapping("/all")
+    @GetMapping("/getAll")
     fun getAllTareas(
         authentication: Authentication
     ) : ResponseEntity<List<TareaDTO>>{
