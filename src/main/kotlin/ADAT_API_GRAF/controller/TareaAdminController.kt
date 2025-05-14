@@ -65,11 +65,14 @@ class TareaAdminController {
         @RequestBody tareaAdminAddDTO : TareaAdminAddDTO
     ) : ResponseEntity<TareaDTO>?{
 
+        println("Hols")
         if (tareaAdminAddDTO.usuario.isBlank()){
             tareaAdminAddDTO.usuario=authentication.name
         }
 
         val tarea = tareaService.insetAdminTarea(tareaAdminAddDTO,authentication)
+
+        println(tarea)
 
         return ResponseEntity(tarea, HttpStatus.CREATED)
     }
