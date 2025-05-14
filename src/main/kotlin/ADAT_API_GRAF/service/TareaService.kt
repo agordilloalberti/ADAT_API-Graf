@@ -188,7 +188,7 @@ class TareaService {
         return tareasResult.toList()
     }
 
-    fun insetAdminTarea(tarea: TareaAdminAddDTO, authentication: Authentication) : TareaDTO?{
+    fun insetAdminTarea(tarea: TareaAdminAddDTO, authentication: Authentication) : TareaDTO{
         val admin = usuarioRepository.findByUsername(authentication.name).orElseThrow {
             NotFoundException("El usuario ${authentication.name} no existe")
         }

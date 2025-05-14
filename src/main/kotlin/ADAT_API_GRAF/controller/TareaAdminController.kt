@@ -65,11 +65,14 @@ class TareaAdminController {
         @RequestBody tareaAdminAddDTO : TareaAdminAddDTO
     ) : ResponseEntity<TareaDTO>?{
 
+        println("Hols")
         if (tareaAdminAddDTO.usuario.isBlank()){
             tareaAdminAddDTO.usuario=authentication.name
         }
 
         val tarea = tareaService.insetAdminTarea(tareaAdminAddDTO,authentication)
+
+        println(tarea)
 
         return ResponseEntity(tarea, HttpStatus.CREATED)
     }
@@ -131,7 +134,7 @@ class TareaAdminController {
         if (name.isBlank()){
             throw InvalidInputException("El nombre de la tarea es obligatorio")
         }
-//
+
         val tarea = tareaService.deleteTarea(name, authentication)
 
         return  ResponseEntity(tarea, HttpStatus.OK)
